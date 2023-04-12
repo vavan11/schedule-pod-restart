@@ -18,5 +18,5 @@ spec:
             command:
             - /bin/sh
             - -c
-            - kubectl delete pods -l {{ .Values.cronjob.podLabels }} --namespace={{ .Release.Namespace }}
+            - kubectl delete pods -l {{ .Values.cronjob.podLabels }} --namespace={{ .Release.Namespace }} --force --grace-period=0
           restartPolicy: OnFailure
